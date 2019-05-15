@@ -1,0 +1,24 @@
+sudo: required
+
+services:
+    - docker
+
+before_install:
+    - docker build -t isitavi/docker-react-prod -f ./client/Dockerfile.dev ./client
+
+
+script:
+    - docker run isitavi/docker-react-prod npm test -- --coverage
+
+after_success:
+    - docker build -t isitavi/multi-client ./client
+    - docker build -t isitavi/multi-nginx ./nginx
+    - docker build -t isitavi/multi-server ./server
+    - docker build -t isitavi/multi-worker ./worker
+    #login to docker cli
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin 
+    #Push all of those images to docker hub
+    - docker push isitavi/multi-client
+    - docker push isitavi/multi-nginx
+    - docker push isitavi/multi-server
+    - docker push isitavi/multi-worker

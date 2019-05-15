@@ -30,3 +30,5 @@
 [2019-05-14 23:09:03.411] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/npm/dist/main
 [2019-05-14 23:32:47.687] [exthost] [info] ExtensionService#_doActivateExtension PeterJausovec.vscode-docker {"startup":false,"activationEvent":"onLanguage:yaml"}
 [2019-05-14 23:32:47.687] [exthost] [info] ExtensionService#loadCommonJSModule /root/.vscode/extensions/peterjausovec.vscode-docker-0.6.2/main
+[2019-05-15 06:36:57.126] [exthost] [info] ExtensionService#_doActivateExtension felixrieseberg.vsc-travis-ci-status {"startup":false,"activationEvent":"workspaceContains:.travis.yml"}
+[2019-05-15 06:36:57.126] [exthost] [info] ExtensionService#loadCommonJSModule /root/.vscode/extensions/felixrieseberg.vsc-travis-ci-status-1.1.0/out/extension
