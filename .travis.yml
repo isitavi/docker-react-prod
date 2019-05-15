@@ -4,7 +4,7 @@ services:
     - docker
 
 before_install:
-    - gem install bundler --pre
+    - gem install bundler 
     - docker build -t isitavi/docker-react-prod -f ./client/Dockerfile.dev ./client
 
 
