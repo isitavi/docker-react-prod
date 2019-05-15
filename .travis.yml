@@ -2,9 +2,10 @@ sudo: required
 
 services:
     - docker
+install:
+    - bundle install 
 
-before_install:
-    - gem install bundler 
+before_install: 
     - docker build -t isitavi/docker-react-prod -f ./client/Dockerfile.dev ./client
 
 
